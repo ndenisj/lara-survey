@@ -10,7 +10,9 @@
 
                 <div class="card-body">
                     <a href="/questionnaires/{{$questionnaire->id}}/questions/create" class="btn btn-dark">Create New Question</a>
+                    @if(count($questionnaire->questions) > 0)
                     <a href="/surveys/{{$questionnaire->id}}-{{ Str::slug($questionnaire->title) }}" class="btn btn-dark">Take Survey</a>
+                    @endif
                     <div class="mt-3">
                         <div class="row">
                             @foreach ($questionnaire->questions as $question)
